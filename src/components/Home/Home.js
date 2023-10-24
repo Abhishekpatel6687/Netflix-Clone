@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
-import cover from "../../cover.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -15,7 +14,7 @@ const popular = "popular";
 const topRated = "top_rated";
 
 const Card = ({ img }) => {
-  return <img className="card" src={img} alt="cover" />;
+  return <img className="card" src={img} alt="img" />;
 };
 // useEffect(()=>{
 //       <h2>{title}</h2>
@@ -23,7 +22,7 @@ const Card = ({ img }) => {
 
 //     })
 // })
-const Row = ({ title, arr = [] }) => {
+const Row = ({ title, arr }) => {
   return (
     <div className="row">
       <h2>{title}</h2>
@@ -63,7 +62,7 @@ const Home = () => {
     const fetchPopular = async () => {
       const {
         data: { results },
-      } = await axios.get(`${url}/movie/${popular}?api_key=${apikey}&page=58`);
+      } = await axios.get(`${url}/movie/${popular}?api_key=${apikey}&page=6`);
       setPopularMovies(results);
     };
 
@@ -75,26 +74,18 @@ const Home = () => {
     };
 
     const getAllGener = async () => {
-      // https://api.themoviedb.org/3/genre/movie/list
-      // "5e92b9540ba66a721f8ed126c0dca895";
-      // --url 'https://api.themoviedb.org/3/genre/movie/list?language=en' \
       const {
         data: { genres },
       } = await axios.get(`${url}/genre/movie/list?api_key=${apikey}`);
       setGenre(genres);
-      console.log(genres);
+      // console.log(genres);
     };
-    //  const getGenerTV = async() => {
-    //   // --url 'https://api.themoviedb.org/3/genre/tv/list?language=en' \
-    //   const {data: {results}} = await axios.get(`${url}/genre/${topRated}?api_key=${apikey}`)
-    //   setTopRatedMovies(results)
-    // };
+
     fetchUpcoming();
     fetchNowPlaying();
     fetchPopular();
     fetchTopRated();
     getAllGener();
-    // getGenerTV()
   }, []);
   // console.log(upcomingMovies)
 
@@ -121,7 +112,6 @@ const Home = () => {
             <AiOutlinePlus />
           </button>
         </div>
-        
       </div>
 
       <Row title={"Upcoming"} arr={upcomingMovies} />

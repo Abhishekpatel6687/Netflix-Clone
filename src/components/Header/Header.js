@@ -9,8 +9,8 @@ const Header = () => {
       <img src={logo} alt="logo" />
 
       <div>
-        <Link to="/tvShows">TV Shows</Link>
-        <Link to="/tvShows">Movies</Link>
+        <Link  to="/tvShows">TV Shows</Link>
+        <Link to="/">Movies</Link>
         <Link to="/tvShows">Recently Added</Link>
         <Link to="/tvShows">My List</Link>
       </div>
