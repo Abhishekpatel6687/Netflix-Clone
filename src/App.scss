@@ -16,18 +16,17 @@ a{
     text-decoration: none;
 }
 
-
     $bg:  rgb(16, 16, 16);
 
 .header{
     height: 100px;
-    background-color:$bg;
+    // background-color:$bg;
+    box-shadow:inset 0px 190px 1000px  rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     padding: 2rem;
     box-sizing: border-box;
     justify-content: space-between;
-    // position: fixed;
 
     > img{
         height: 100%;    

@@ -1,6 +1,6 @@
-$bg:  rgb(16, 16, 16);
+$bg:  #101010;
 
-.banner{
+.home-cover{
     height: 400px;
     background-color: $bg;
      background-size: cover;
@@ -23,7 +23,7 @@ $bg:  rgb(16, 16, 16);
         opacity: 0.4;
      }
 
-     h1,p{
+     h1,h3,h4,p{
         color: white;
         font-size: 3rem;
         width: 50%;

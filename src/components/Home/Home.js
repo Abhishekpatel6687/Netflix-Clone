@@ -92,7 +92,7 @@ const Home = () => {
   return (
     <section className="home">
       <div
-        className="banner"
+        className="home-cover"
         style={{
           backgroundImage: PopularMovies[0]
             ? `url(${`${imgUrl}/${PopularMovies[0].poster_path}`})`
