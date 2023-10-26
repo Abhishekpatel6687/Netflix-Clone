@@ -35,8 +35,8 @@ console.log(searchResults)
     setSearchText(value); // Update the search text in the state
   };
 
+  // Define your filter logic here. For example, filtering by movie title.
   const filterResults = () => {
-    // Define your filter logic here. For example, filtering by movie title.
     const filteredResults = searchResults.filter((result) =>
       result.title.toLowerCase().includes(searchText.toLowerCase())
     );

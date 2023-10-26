@@ -1,6 +1,12 @@
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./HomeBanner.scss";
 import backgroundImage from "./banner.jpg"
 const HomeBanner = () => {
+  const navigate = useNavigate();
+  const onSignHandler = (e) => {
+    e.preventDefault()
+    navigate("/login")
+  }
   return (
     <>
     <div className="container" style={{ backgroundImage: `url(${backgroundImage})` }} >
@@ -11,7 +17,9 @@ const HomeBanner = () => {
             <option>Hindi</option>
             <option>English</option>
           </select>
-          <button className="btn">Sign In</button>
+          <Link to="/login">
+          <button className="btn" onClick={onSignHandler}>Sign In</button>
+          </Link>
         </form>
       </div>
       <div className="home-banner">

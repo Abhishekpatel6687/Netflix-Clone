@@ -1,20 +1,25 @@
-import './App.scss';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import React from "react";
+import "./App.scss";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Header from './components/Header/Header';
-import TvShow from './components/TV_Show/TvShow';
-import HomeBanner from './components/HomeBanner';
+import Header from "./components/Header/Header";
+import TvShow from "./components/TV_Show/TvShow";
+import HomeBanner from "./components/HomeBanner";
+import Login from "./components/Login";
 
 function App() {
+  
   return (
-   <Router>
-   <HomeBanner/>
-   <Header/>
-   <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/tvShows" element={<TvShow />} />
-   </Routes>
-   </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeBanner />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<><Header/><Home/></>} />
+        <Route path="/tvShows" element={<><Header/><TvShow /></>} />
+        <Route path="/login" element={<Login/>} />
+        
+      </Routes>
+    </Router>
   );
 }
 
