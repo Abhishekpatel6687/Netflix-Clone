@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import "./Login.scss";
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../firebaseConfig";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import backgroundImage from "./banner.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({page}) => {
   const app = initializeApp(firebaseConfig);
 
+  // const location = useLocation(); // it is already provide pathname="/login" true
+  // const page = location.pathname === '/login'? true : false;
+  // console.log(location)
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isUserExist, setUserExist] = useState(false)
+  const [isUserAlready, setUserAlready] = useState(false)
 
   const emailOnChangeHandler = (e) => {
     setEmail(e.target.value);
@@ -27,6 +32,7 @@ const Login = ({page}) => {
 
   const onSignInClickHandler = (e) => {
     e.preventDefault();
+    if(page){
     signInWithEmailAndPassword(auth, email, password)
       .then((auth) => {
         if (auth) {
@@ -34,6 +40,15 @@ const Login = ({page}) => {
         }
       })
       .catch((error) => setUserExist(true));
+    } else {
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((auth) => {
+         if(auth){
+          navigate('/home')
+         }
+      })
+      .catch((error) => setUserAlready(true))
+    }
   };
   return (
     <div
@@ -42,6 +57,7 @@ const Login = ({page}) => {
     >
       <div className="signIn-form">
    {isUserExist && <h2>User does not exist | Go to SignUp</h2> }
+   {isUserAlready && <h2>Email already in use | Go for Sign In </h2> }
         <h1>{page?"Sign In" : "Register"}</h1>
         <form>
           <input
