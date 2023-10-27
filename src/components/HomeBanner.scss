@@ -1,10 +1,9 @@
 .container{
+  height:100vh;
   box-shadow:inset 0px 190px 1000px  rgba(0, 0, 0, 0.8);
-  height: 100vh;
 }
 .header-banner{
- 
-    // height: 10vh;
+
     display: flex;
     align-items: center;
     padding: 1.8vw 10vw;

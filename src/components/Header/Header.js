@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import "./Header.scss"
+import { Link, useNavigate } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
 import axios from "axios";
 import List from "../List";
@@ -8,6 +9,11 @@ const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
 
 const Header = () => {
+
+  const navigate = useNavigate()
+  const onHomeBannerHandler = () => {
+    navigate("/")
+  }
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [searchResults, setSearchResults] = useState([]);
 
@@ -45,7 +51,7 @@ console.log(searchResults)
 
   return (
     <nav className="header">
-      <img src="/Images/logo.png" alt="logo" />
+      <img onClick={onHomeBannerHandler} src="/Images/logo.png" alt="logo" />
 
       <div>
         <Link to="/tvShows">TV Shows</Link>

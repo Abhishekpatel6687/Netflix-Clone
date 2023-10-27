@@ -1,0 +1,38 @@
+$bg:  rgb(16, 16, 16);
+
+.header{
+    height: 100px;
+    background-color:$bg;
+    // box-shadow:inset 0px 190px 1000px  rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    > img{
+        height: 100%;   
+        cursor: pointer; 
+    }
+
+    >div{
+        width: 100%;
+        margin-left: 4vmax;
+
+        > a {
+            margin: 2vmax;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+    }
+    >svg{
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(224, 215, 215);
+        }
+    }
+
+}
