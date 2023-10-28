@@ -1,31 +1,32 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Row } from "../Row";
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
-const imgUrl = "https://image.tmdb.org/t/p/w500/";
+// const imgUrl = "https://image.tmdb.org/t/p/w500/";
 const AiringToday = "airing_today";
 const OnTheAir = "on_the_air";
 const Popular = "popular";
 const TopRated = "top_rated";
 
-function Card({ img }) {
-    return <img className="card" src={img} alt="img" />;
-  };
+// function Card({ img }) {
+//     return <img className="card" src={img} alt="img" />;
+//   };
 
-  function Row({ title, arr }) {
-    return (
-      <div className="row">
-        <h2>{title}</h2>
+//   function Row({ title, arr }) {
+//     return (
+//       <div className="row">
+//         <h2>{title}</h2>
 
-        <div>
-          {arr.map((item, index) => {
-            return <Card key={index} img={`${imgUrl}/${item.backdrop_path}`} />;
-          })}
-        </div>
-      </div>
-    );
-  };
+//         <div>
+//           {arr.map((item, index) => {
+//             return <Card key={index} img={`${imgUrl}/${item.backdrop_path}`} />;
+//           })}
+//         </div>
+//       </div>
+//     );
+//   };
 const TvShow = () => {
   const [AiringTodayTV, setAiringTodayTV] = useState([]);
   const [OnTheAirTV, setOnTheAirTV] = useState([]);

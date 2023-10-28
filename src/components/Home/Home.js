@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiPlay } from "react-icons/bi";
+import {Row} from "../Row";
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
@@ -13,28 +14,6 @@ const nowPlaying = "now_playing";
 const popular = "popular";
 const topRated = "top_rated";
 
-const Card = ({ img }) => {
-  return <img className="card" src={img} alt="img" />;
-};
-// useEffect(()=>{
-//       <h2>{title}</h2>
-//     fetch("https://api.themoviedb.org/3/movie/550?api_key=5e92b9540ba66a721f8ed126c0dca895").then(()=>{
-
-//     })
-// })
-const Row = ({ title, arr }) => {
-  return (
-    <div className="row">
-      <h2>{title}</h2>
-
-      <div>
-        {arr.map((item, index) => {
-          return <Card key={index} img={`${imgUrl}/${item.poster_path}`} />;
-        })}
-      </div>
-    </div>
-  );
-};
 const Home = () => {
   const [upcomingMovies, setupcomingMovies] = useState([]);
   const [nowPlayingMovies, setnowPlayingMovies] = useState([]);

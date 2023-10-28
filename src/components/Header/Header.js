@@ -3,7 +3,7 @@ import "./Header.scss"
 import { Link, useNavigate } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
 import axios from "axios";
-import List from "../List";
+import {Row} from "../Row";
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
@@ -17,7 +17,6 @@ const Header = () => {
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [searchResults, setSearchResults] = useState([]);
 
-console.log(searchResults)
   useEffect(() => {
     const fetchSearch = async () => {
       if (searchText.trim() === "") {
@@ -45,28 +44,30 @@ console.log(searchResults)
   const filterResults = () => {
     const filteredResults = searchResults.filter((result) =>
       result.title.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setSearchResults(filteredResults);
+      );
+      setSearchResults(filteredResults);
   };
 
   return (
+    <>
     <nav className="header">
       <img onClick={onHomeBannerHandler} src="/Images/logo.png" alt="logo" />
 
       <div>
+        <Link to="/home">Movies</Link>
         <Link to="/tvShows">TV Shows</Link>
-        <Link to="/">Movies</Link>
-        <Link to="/tvShows">Recently Added</Link>
+        <Link to="">Recently Added</Link>
         <Link to="/tvShows">My List</Link>
       </div>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input type="text" name="text" value={searchText} onChange={updateFilterValue} />
-        <button onClick={filterResults}>
-          <ImSearch />
-        </button>
+      <form className="search" onSubmit={(e) => e.preventDefault()}>
+        <input type="text" name="text" value={searchText} onChange={updateFilterValue} placeholder="Search" />
+    
+          <ImSearch className="icon" onClick={filterResults}/>
+
       </form>
-      <List searchResults={searchResults} />
     </nav>
+{searchText ? <Row title={"Search List"} arr={searchResults} /> : ""}
+</>
   );
 };
 

@@ -35,4 +35,20 @@ $bg:  rgb(16, 16, 16);
         }
     }
 
+    .search{
+        display: flex;
+        gap:4px;
+    }
+    input {
+        height: 22px;
+        border-radius: 5px;
+        padding: 0 2px;
+    }
+    .icon{ 
+    color:white;
+    font-size: 22px;
+    cursor: pointer;
+    
+   }
+
 }

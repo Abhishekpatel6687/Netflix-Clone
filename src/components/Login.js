@@ -114,7 +114,7 @@ const Login = ({ page }) => {
         </form>
         <div className="para">
           <h3>
-            {page ? "New to Netflix" : "Existing User"}{" "}
+            {page ? "New to Netflix" : "Existing User"}
             <Link to={page ? "/register" : "/login"}>
               <span>{page ? "Sign up now." : "Sign In"}</span>
             </Link>
