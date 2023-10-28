@@ -11,7 +11,7 @@ import backgroundImage from "./banner.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ page }) => {
-  const app = initializeApp(firebaseConfig);
+ initializeApp(firebaseConfig);
 
   // const location = useLocation(); // it is already provide pathname="/login" true
   // const page = location.pathname === '/login'? true : false;
