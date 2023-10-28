@@ -1,38 +1,20 @@
 .container{
   height:100vh;
-  box-shadow:inset 0px 190px 1000px  rgba(0, 0, 0, 0.8);
+  width: 100%;
+  box-shadow:inset 0px 190px 1000px  rgba(0, 0, 0, 0.9);
 }
 .header-banner{
 
     display: flex;
     align-items: center;
-    padding: 1.8vw 10vw;
+    padding: 25px 80px;
     box-sizing: border-box;
     justify-content: space-between;
 
     > img{
         height:3.5vw; 
         cursor: pointer; 
-    }
-
-    >div{
-        width: 100%;
-        margin-left: 4vmax;
-
-        > a {
-            margin: 2vmax;
-            font-size: 1.3rem;
-            font-weight: 300;
-        }
-    }
-    >svg{
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-
-        &:hover {
-            color: rgb(224, 215, 215);
-        }
+    
     }
 
 }
@@ -61,11 +43,11 @@
   cursor: pointer;
 }
 .home-banner{
-  // height: 100%;
-  margin-top: 13vw;
+  margin-top: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
+// background-color: black;
 
   >div {
     display: flex; 
@@ -133,4 +115,59 @@
     
   }
 }
+@media(max-width: 600px) {
+  .header-banner{
+    padding: 30px 50px;
+    
+    > img{
+        height:5.2vw; 
+        cursor: pointer; 
+    }
+  }
 
+  .option{
+    height: 4.4vw;
+    width: 15.6vw;
+    font-size: 2.4vw;
+  }
+  .btn {
+    height: 4.4vw;
+    width: 15.6vw;
+    font-size: 2.4vw;
+    margin-left: 1.8vw;
+  }
+  .home-banner{
+    margin-top: 140px;
+  
+    div {
+      h1 {
+        font-size: 5vw;
+      }
+      h3{
+        font-size: 4vw;
+        margin-top: 1.8vw;
+      }
+      p{
+        font-size: 3vw;
+        margin-top: 1.2vw;
+      }
+   
+      
+      div {
+
+        input{
+          width: 42vw;
+          height: 5.4vw;
+          font-size: 2.4vw;
+        }
+  
+        > button {
+          width: 18vw;
+          height: 5.4vw;
+          font-size: 2.4vw;
+          margin-left: 2vw;
+        }
+      }
+    }
+  }
+}
