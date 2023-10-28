@@ -145,31 +145,30 @@
   
     div {
       h1 {
-        font-size: 8vw;
+        font-size: 5vw;
         margin-bottom: 3vw;
       }
       h3{
-        font-size: 6vw;
+        font-size: 4vw;
         margin-top: 2vw;
       }
       p{
-        font-size: 4vw;
+        font-size: 3vw;
         margin-top: 1.2vw;
       }
    
       
       div {
-           flex-direction: column;
-           margin:8vw 0;
+           margin:8vw;
         input{
-          width: 50vw;
-          height: 12vw;
+          width: 42vw;
+          height: 8vw;
           font-size: 3vw;
         }
   
         button {
           width: 18vw;
-          height: 12vw;
+          height: 8vw;
           font-size: 2.4vw;
         
         }
