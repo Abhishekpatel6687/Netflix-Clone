@@ -26,7 +26,6 @@ $bg:  rgb(16, 16, 16);
         }
     }
 
-
     .search{
         display: flex;
         gap:4px;
@@ -90,6 +89,7 @@ $bg:  rgb(16, 16, 16);
         .navRow{
             display: none;
         }
+
         .navColumn{
             margin-top:265px;
             display: flex;
@@ -129,8 +129,10 @@ $bg:  rgb(16, 16, 16);
             font-size: 5vw;
            }
         .iconClose{
-            display:none;
+            display: block;
+            font-size: 5vw;
            }
+     
     }
     
 }
