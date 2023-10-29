@@ -15,7 +15,7 @@ $bg:  rgb(16, 16, 16);
         cursor: pointer; 
     }
 
-    >div{
+    .navRow{
         width: 100%;
         margin-left: 3vmax;
 
@@ -42,7 +42,11 @@ $bg:  rgb(16, 16, 16);
     display: flex;
     font-size: 2.2vw;    
    }
-   .icon2{
+   .iconOpen{
+    color: white;
+    display: none;
+   }
+     .iconClose{
     color: white;
     display: none;
    }
@@ -82,9 +86,33 @@ $bg:  rgb(16, 16, 16);
          img{
             height: 9vw;   
         }
-    
-        div{
-             display: none;
+        
+        .navRow{
+            display: none;
+        }
+        .navColumn{
+            margin-top:265px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+             z-index: 99;
+             margin-left:35px;
+            
+     
+              a {
+                height: 50px;
+                width: 600%;
+                background-color:rgba(0, 0, 0, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                 margin:0;
+                color:white;
+                font-weight: 400;
+                font-size: 3vw;
+             }
+
         }
     
         input {
@@ -96,10 +124,13 @@ $bg:  rgb(16, 16, 16);
             margin: 0 2vw;
            
         }
-        .icon2{
+        .iconOpen{
             display: block;
-            font-size: 4.8vw;
-        }
+            font-size: 5vw;
+           }
+        .iconClose{
+            display:none;
+           }
     }
     
 }

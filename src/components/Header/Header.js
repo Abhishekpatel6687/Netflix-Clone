@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
+import { CgMenu, CgClose } from "react-icons/cg";
 import axios from "axios";
 import { Row } from "../Row";
-import { AiOutlineMenu } from "react-icons/ai";
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
@@ -16,7 +16,7 @@ const Header = () => {
   };
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [searchResults, setSearchResults] = useState([]);
-  // const [showIcons, setShowIcon] = useState(false);
+  const [showIcons, setShowIcon] = useState(true);
 
   useEffect(() => {
     const fetchSearch = async () => {
@@ -58,7 +58,7 @@ const Header = () => {
       <nav className="header">
         <img onClick={onHomeBannerHandler} src="/Images/logo.png" alt="logo" />
 
-        <div>
+        <div className={showIcons?"navRow": "navColumn"} >
           <Link to="/home">Movies</Link>
           <Link to="/tvShows">TV Shows</Link>
           <Link to="">Recently Added</Link>
@@ -74,9 +74,14 @@ const Header = () => {
           />
 
           <ImSearch className="icon1" onClick={filterResults} />
-          {/* <a href="#" onClick={() => setShowIcon(!showIcons)}> */}
-            <AiOutlineMenu className="icon2" />
-          {/* </a> */}
+
+            <CgMenu className="iconOpen"
+            onClick={() => setShowIcon(!showIcons)}
+          />
+          <CgClose
+            className="iconClose"
+            onClick={() => setShowIcon(!showIcons)}
+          />
         </form>
       </nav>
       {searchText ? <Row title={"Search List"} arr={searchResults} /> : ""}
