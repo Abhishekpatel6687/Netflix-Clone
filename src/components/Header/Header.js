@@ -16,7 +16,7 @@ const Header = () => {
   };
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [searchResults, setSearchResults] = useState([]);
-  const [showIcons, setShowIcon] = useState(false);
+  // const [showIcons, setShowIcon] = useState(false);
 
   useEffect(() => {
     const fetchSearch = async () => {
@@ -74,9 +74,9 @@ const Header = () => {
           />
 
           <ImSearch className="icon1" onClick={filterResults} />
-          <a href="#" onClick={() => setShowIcon(!showIcons)}>
+          {/* <a href="#" onClick={() => setShowIcon(!showIcons)}> */}
             <AiOutlineMenu className="icon2" />
-          </a>
+          {/* </a> */}
         </form>
       </nav>
       {searchText ? <Row title={"Search List"} arr={searchResults} /> : ""}
