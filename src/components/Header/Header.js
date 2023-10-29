@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import "./Header.scss"
+import "./Header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
 import axios from "axios";
-import {Row} from "../Row";
-import {AiOutlineMenu} from "react-icons/ai"
+import { Row } from "../Row";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
 
 const Header = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onHomeBannerHandler = () => {
-    navigate("/")
-  }
+    navigate("/");
+  };
   const [searchText, setSearchText] = useState(""); // State to store the search text
   const [searchResults, setSearchResults] = useState([]);
+  const [showIcons, setShowIcon] = useState(false);
 
   useEffect(() => {
     const fetchSearch = async () => {
@@ -26,7 +26,11 @@ const Header = () => {
       }
 
       try {
-        const { data: { results } } = await axios.get(`${url}/search/movie?api_key=${apikey}&query=${searchText}`);
+        const {
+          data: { results },
+        } = await axios.get(
+          `${url}/search/movie?api_key=${apikey}&query=${searchText}`
+        );
         setSearchResults(results);
       } catch (error) {
         console.error("Error fetching search results:", error);
@@ -45,31 +49,38 @@ const Header = () => {
   const filterResults = () => {
     const filteredResults = searchResults.filter((result) =>
       result.title.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setSearchResults(filteredResults);
+    );
+    setSearchResults(filteredResults);
   };
 
   return (
     <>
-    <nav className="header">
-      <img onClick={onHomeBannerHandler} src="/Images/logo.png" alt="logo" />
+      <nav className="header">
+        <img onClick={onHomeBannerHandler} src="/Images/logo.png" alt="logo" />
 
-      <div>
-        <Link to="/home">Movies</Link>
-        <Link to="/tvShows">TV Shows</Link>
-        <Link to="">Recently Added</Link>
-        <Link to="/tvShows">My List</Link>
-      </div>
-      <form className="search" onSubmit={(e) => e.preventDefault()}>
-        <input type="text" name="text" value={searchText} onChange={updateFilterValue} placeholder="Search" />
-    
-          <ImSearch className="icon" onClick={filterResults}/>
-        <AiOutlineMenu className="icon"/> 
+        <div>
+          <Link to="/home">Movies</Link>
+          <Link to="/tvShows">TV Shows</Link>
+          <Link to="">Recently Added</Link>
+          <Link to="/tvShows">My List</Link>
+        </div>
+        <form className="search" onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            name="text"
+            value={searchText}
+            onChange={updateFilterValue}
+            placeholder="Search"
+          />
 
-      </form>
-    </nav>
-{searchText ? <Row title={"Search List"} arr={searchResults} /> : ""}
-</>
+          <ImSearch className="icon1" onClick={filterResults} />
+          <a href="#" onClick={() => setShowIcon(!showIcons)}>
+            <AiOutlineMenu className="icon2" />
+          </a>
+        </form>
+      </nav>
+      {searchText ? <Row title={"Search List"} arr={searchResults} /> : ""}
+    </>
   );
 };
 

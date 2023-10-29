@@ -123,3 +123,80 @@ $bg:  #101010;
     }
    }
 }
+
+@media(max-width:800px) {
+    .home-cover{
+        height: 44vw;
+        padding: 3vw;
+    
+         h1,h3,h4,p{
+            color: white;
+            font-size: 4.9vw;
+            width: 60%;
+            z-index: 10;
+         }
+    
+         p{
+            font-size: 1.8vw;
+            word-spacing: 0.3vw;
+         }
+         div {
+            display: flex;
+    
+            button {
+                padding: 1vw;
+                width: 14vw;
+                font-size: 2vw;
+    
+                &:hover{
+                    opacity: 0.7;
+                }
+    
+                &:nth-child(odd){
+                    background-color: white;
+                    color: black;
+                }
+                &:nth-child(even){
+                    background-color: rgb(122, 102, 102);
+                    color: white;
+                }
+                svg {
+                    font-size: 2.8vw;
+                }
+             }
+         }
+    }
+}
+
+@media(max-width:600px) {
+    
+    .home-cover{
+        height: 62vw;
+        padding: 4vw;
+    
+         h1,h3,h4,p{
+            font-size: 5.4vw;
+            width: 65%;
+            z-index: 10;
+         }
+    
+         p{
+            font-size: 2.4vw;
+            word-spacing: 0.4vw;
+
+         }
+         >div {
+    
+            button {
+                padding: 1.4vw;
+                width: 16vw;
+                margin: 1.4vw;
+                font-size: 2.6vw;
+    
+                &:hover{
+                    opacity: 0.7;
+                }
+             }
+         }
+    }
+}
