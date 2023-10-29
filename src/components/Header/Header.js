@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ImSearch } from "react-icons/im";
 import axios from "axios";
 import {Row} from "../Row";
+import {AiOutlineMenu} from "react-icons/ai"
 
 const apikey = "5e92b9540ba66a721f8ed126c0dca895";
 const url = "https://api.themoviedb.org/3";
@@ -63,6 +64,7 @@ const Header = () => {
         <input type="text" name="text" value={searchText} onChange={updateFilterValue} placeholder="Search" />
     
           <ImSearch className="icon" onClick={filterResults}/>
+        <AiOutlineMenu className="icon"/> 
 
       </form>
     </nav>
