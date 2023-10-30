@@ -16,8 +16,8 @@ const HomeBanner = () => {
           <img src="/Images/logo.png" alt="logo" />
           <form>
             <select className="option">
-              <option>Hindi</option>
               <option>English</option>
+              <option>Hindi</option>
             </select>
             <Link to="/login">
               <button className="btn" onClick={onSignInHandler}>
