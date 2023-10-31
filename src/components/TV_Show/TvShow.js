@@ -10,23 +10,7 @@ const OnTheAir = "on_the_air";
 const Popular = "popular";
 const TopRated = "top_rated";
 
-// function Card({ img }) {
-//     return <img className="card" src={img} alt="img" />;
-//   };
 
-//   function Row({ title, arr }) {
-//     return (
-//       <div className="row">
-//         <h2>{title}</h2>
-
-//         <div>
-//           {arr.map((item, index) => {
-//             return <Card key={index} img={`${imgUrl}/${item.backdrop_path}`} />;
-//           })}
-//         </div>
-//       </div>
-//     );
-//   };
 const TvShow = () => {
   const [AiringTodayTV, setAiringTodayTV] = useState([]);
   const [OnTheAirTV, setOnTheAirTV] = useState([]);

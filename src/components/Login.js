@@ -116,7 +116,7 @@ const Login = ({ page }) => {
           <h3>
             {page ? "New to Netflix" : "Existing User"}
             <Link to={page ? "/register" : "/login"}>
-              <span>{page ? "Sign up now." : "Sign In"}</span>
+              <span>{page ? " Sign up now." : " Sign In"}</span>
             </Link>
           </h3>
           <p>
