@@ -9,19 +9,19 @@ $bg:  rgb(16, 16, 16);
     padding: 0 2vw;
     box-sizing: border-box;
     justify-content: space-between;
-
+    padding-top: 1vw;
     > img{
         height: 4.8vw;   
         cursor: pointer; 
     }
-
+    
     .navRow{
         width: 100%;
-        margin-left: 3vmax;
+        margin-left: 4vmax;
 
          a {
-            margin: 1vw;
-            font-size: 2vw;
+            margin: 1.4vw;
+            font-size: 1.6vw;
             font-weight: 300;
         }
     }

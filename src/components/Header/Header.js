@@ -65,7 +65,7 @@ const Header = () => {
           <Link to="/tvShows">My List</Link>
         </div>
         <form className="search" onSubmit={(e) => e.preventDefault()}>
-          <input
+          <input style={{paddingLeft:'10px'}}
             type="text"
             name="text"
             value={searchText}
