@@ -29,7 +29,7 @@ const Home = () => {
       //   console.log(`${url}/movie/${upcoming}?api_key=${apikey}`)
       //   console.log(results)
       setupcomingMovies(results);
-    };
+    }; 
 
     const fetchNowPlaying = async () => {
       const {
